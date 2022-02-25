@@ -1,0 +1,536 @@
+body {
+  padding: 0;
+  margin: 0;
+  background: rgba(243, 216, 98, 0.719);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+.header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  border-radius: 8px;
+  padding: 10px;
+  margin: 10px;
+  background-color: rgb(223, 199, 92);
+}
+.logodiv {
+  position: absolute;
+  left: 20px;
+}
+.menu {
+  padding: 0;
+  margin-left: 1500px;
+  background-color: aliceblue;
+  border-radius: 8px;
+  width: 30%;
+}
+#logo {
+  width: 300px;
+  height: 300px;
+}
+ul a {
+  text-decoration: none;
+}
+.login-a {
+  margin-left: 30px;
+  padding: 10px;
+  color: black;
+  border-radius: 8px;
+}
+.login-a:hover {
+  background-color: rgba(194, 127, 26, 0.527);
+}
+.fa {
+  padding: 18px;
+  width: 15px;
+  height: 15px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 50%;
+  margin-right: 40px;
+  margin-top: 10px;
+}
+.fa:hover {
+  opacity: 0.7;
+}
+.fa-facebook {
+  background: #3b5998;
+  color: white;
+}
+.fa-google {
+  background: #dd4b39;
+  color: white;
+}
+.fa-instagram {
+  background: #125688;
+  color: white;
+}
+.social-logos {
+  text-align: center;
+  margin-top: 20px;
+}
+.footer {
+  position: static;
+  width: 100%;
+  background-color: rgb(223, 199, 92);
+  color: white;
+  text-align: center;
+}
+.footer1 {
+  height: 140px;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: rgb(223, 199, 92);
+  color: white;
+  text-align: center;
+}
+.meetteam {
+  text-align: center;
+}
+.headers-paragraphs {
+  font-size: 40px;
+  font-family: inherit;
+  color: rgb(122, 139, 108);
+}
+hr {
+  border: 2px solid white;
+  width: 50%;
+  margin-top: 50px;
+  background-color: white;
+  border-radius: 50px;
+}
+/* DERI KETU ESHTE PJESA E HEADER AND FOOTER */
+
+/* MeettheTeam*/
+.content-div {
+  padding-top: 30px;
+  padding-bottom: 50px;
+  width: 1450px;
+  height: 650px;
+  margin: auto;
+  margin-top: 50px;
+  background-color: white;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  border-radius: 15px;
+  border: solid 1px #28026e;
+}
+
+.member-images {
+  width: 500px;
+  height: 500px;
+  border-radius: 30px;
+}
+.img1,
+.img2 {
+  width: 500px;
+  height: 500px;
+  margin-top: 10px;
+  transition: 1.5s;
+}
+.img1:hover,
+.img2:hover {
+  transform: rotate(360deg);
+}
+.firstmember-name,
+.secondmember-name {
+  width: 500px;
+  height: 50px;
+  background-color: #28026e;
+  text-align: center;
+  color: white;
+}
+.firstmember-info,
+.secondmember-info {
+  width: 500px;
+  height: 50px;
+  background-color: #28026e;
+  margin-bottom: 15px;
+  color: white;
+  text-align: center;
+}
+.contactus {
+  width: 1450px;
+  margin: auto;
+  text-align: center;
+}
+.contactparagraph {
+  font-size: 20px;
+  font-family: inherit;
+  color: #28026e;
+}
+.contactbutton {
+  width: 250px;
+  height: 50px;
+  border: solid 1px #28026e;
+  color: #28026e;
+}
+/*    Contact CSS    */
+.contact-div {
+  width: 1000px;
+  max-height: 2500px;
+  margin-top: 30px;
+  margin-left: 300px;
+  background-color: white;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding: 30px;
+  border-radius: 5px;
+}
+.averageinputs {
+  display: flex;
+  width: 300px;
+  height: 35px;
+  margin-top: 10px;
+  border-radius: 10px;
+  transition: 0.5s;
+  border: 3px solid black;
+}
+.averageinputs:hover {
+  width: 320px;
+  height: 45px;
+  border: 3px solid darkgoldenrod;
+}
+.adress-input:hover {
+  width: 820px;
+  height: 45px;
+  border: 3px solid darkgoldenrod;
+}
+.adress-input {
+  display: flex;
+  width: 800px;
+  height: 35px;
+  margin-top: 10px;
+  border-radius: 10px;
+  transition: 0.5s;
+  border: 3px solid black;
+}
+.contacts-child {
+  margin-top: 40px;
+  font-size: 20px;
+}
+#subjekti-input {
+  display: flex;
+  width: 800px;
+  height: 60px;
+  margin-top: 10px;
+  border-radius: 10px;
+  transition: 0.5s;
+  border: 3px solid black;
+}
+#mesazhi-input {
+  display: flex;
+  width: 800px;
+  height: 180px;
+  margin-top: 10px;
+  border-radius: 10px;
+  transition: 0.5s;
+  border: 3px solid black;
+}
+#mesazhi-input:hover {
+  width: 820px;
+  height: 200px;
+  border: 3px solid darkgoldenrod;
+}
+#subjekti-input:hover {
+  width: 820px;
+  height: 80px;
+  border: 3px solid darkgoldenrod;
+}
+#button {
+  margin-top: 20px;
+  width: 300px;
+  height: 55px;
+  background-color: rgba(209, 33, 10, 0.904);
+  border-radius: 5px;
+  transition: 0.5s;
+  font-size: 20px;
+}
+#button:hover {
+  width: 320px;
+  background-image: linear-gradient(to right, orange, darkgoldenrod);
+}
+.contact-content {
+  margin-left: 350px;
+  margin-top: 200px;
+  font-size: 25px;
+}
+.general-content {
+  display: flex;
+}
+
+@media only screen and (max-width: 390px) {
+  .header {
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+  }
+  .logodiv {
+    margin-left: 75px;
+  }
+  #logo {
+    width: 200px;
+    height: 200px;
+    margin-bottom: 70px;
+  }
+  .menu {
+    background-color: aliceblue;
+    border-radius: 8px;
+    width: 350px;
+    margin: 0;
+    margin-top: 100px;
+  }
+  ul a {
+    text-decoration: none;
+  }
+  .login-a {
+    margin-left: 4px;
+    padding: 2px;
+    color: black;
+    border-radius: 8px;
+    font-size: 12px;
+  }
+  .login-a:hover {
+    background-color: rgba(194, 127, 26, 0.527);
+  }
+  .social-logos {
+    padding-left: 38px;
+  }
+  .fa {
+    width: 7px;
+    height: 5px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 50%;
+    align-items: center;
+    margin-top: 40px;
+  }
+  .fa:hover {
+    opacity: 0.7;
+  }
+  .fa-facebook {
+    background: #3b5998;
+    color: white;
+  }
+  .fa-google {
+    background: #dd4b39;
+    color: white;
+  }
+  .fa-instagram {
+    background: #125688;
+    color: white;
+  }
+
+  .footer {
+    position: static;
+    width: 100%;
+    background-color: rgb(223, 199, 92);
+    color: white;
+    text-align: center;
+    margin-top: 10px;
+    font-size: 11px;
+  }
+  .footer1 {
+    position: static;
+    width: 100%;
+    background-color: rgb(223, 199, 92);
+    color: white;
+    text-align: center;
+    margin-top: 900px;
+    font-size: 11px;
+  }
+  /* meettheteam media query */
+  .content-div {
+    padding-top: 20px;
+    padding-bottom: 50px;
+    width: 380px;
+    height: 1000px;
+    margin: auto;
+    margin-top: 50px;
+    background-color: white;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    border-radius: 15px;
+    border: solid 1px #28026e;
+  }
+
+  .secondmember-div {
+    margin-top: 70px;
+  }
+  .member-images {
+    width: 360px;
+    height: 360px;
+    border-radius: 30px;
+  }
+  .img1,
+  .img2 {
+    width: 360px;
+    height: 360px;
+    margin-top: 10px;
+    transition: 1.5s;
+  }
+
+  .img1:hover,
+  .img2:hover {
+    transform: rotate(360deg);
+  }
+  .firstmember-name {
+    width: 360px;
+    height: 40px;
+    background-color: #28026e;
+    text-align: center;
+    color: white;
+  }
+  .firstmember-name p {
+    font-size: 20px;
+  }
+  .secondmember-name {
+    width: 360px;
+    height: 40px;
+    background-color: #28026e;
+    text-align: center;
+    color: white;
+  }
+  .firstmember-info,
+  .secondmember-info {
+    width: 360px;
+    height: 40px;
+    background-color: #28026e;
+    margin-bottom: 15px;
+    color: white;
+    text-align: center;
+  }
+  .contactus {
+    width: 350px;
+    margin: auto;
+    text-align: center;
+  }
+  .contactparagraph {
+    font-size: 15px;
+    font-family: inherit;
+    color: #28026e;
+  }
+  .contactbutton {
+    width: 200px;
+    height: 50px;
+    border: solid 1px #28026e;
+    color: #28026e;
+  }
+  .headers-paragraphs {
+    font-size: 30px;
+  }
+  .membername {
+    font-size: 20px;
+  }
+  q {
+    font-size: 13px;
+  }
+  hr {
+    margin-top: 10px;
+  }
+  /* contact media query */
+  .contact-div {
+    width: 300px;
+    height: 1200px;
+    background-color: white;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    border-radius: 5px;
+    margin-left: 12px;
+  }
+  .averageinputs {
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+    height: 25px;
+    margin-top: 1px;
+    border-radius: 10px;
+    transition: 0.5s;
+    border: 3px solid black;
+  }
+  .averageinputs:hover {
+    width: 270px;
+    height: 35px;
+    border: 3px solid darkgoldenrod;
+  }
+  .adress-input:hover {
+    width: 270px;
+    height: 35px;
+    border: 3px solid darkgoldenrod;
+  }
+  .adress-input {
+    display: flex;
+    width: 250px;
+    height: 25px;
+    margin-top: 10px;
+    border-radius: 10px;
+    transition: 0.5s;
+    border: 3px solid black;
+  }
+  .contacts-child {
+    margin-top: 40px;
+    font-size: 20px;
+  }
+  #subjekti-input {
+    display: flex;
+    width: 250px;
+    height: 60px;
+    margin-top: 10px;
+    border-radius: 10px;
+    transition: 0.5s;
+    border: 3px solid black;
+  }
+  #mesazhi-input {
+    display: flex;
+    width: 250px;
+    height: 180px;
+    margin-top: 10px;
+    border-radius: 10px;
+    transition: 0.5s;
+    border: 3px solid black;
+  }
+  #mesazhi-input:hover {
+    width: 270px;
+    height: 190px;
+    border: 3px solid darkgoldenrod;
+  }
+  #subjekti-input:hover {
+    width: 270px;
+    height: 70px;
+    border: 3px solid darkgoldenrod;
+  }
+  #button {
+    margin-top: 20px;
+    width: 180px;
+    height: 55px;
+    background-color: rgba(209, 33, 10, 0.904);
+    border-radius: 5px;
+    transition: 0.5s;
+    font-size: 15px;
+  }
+  #button:hover {
+    width: 200px;
+    background-image: linear-gradient(to right, orange, darkgoldenrod);
+  }
+  .contact-content {
+    font-size: 15px;
+    margin-left: 20px;
+    margin-top: 20px;
+    text-align: center;
+  }
+  .general-content {
+    display: flex;
+    flex-direction: column;
+  }
+  .inputsname {
+    font-size: 15px;
+  }
+}

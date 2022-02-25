@@ -1,0 +1,730 @@
+body {
+  padding: 0;
+  margin: 0;
+  background: rgba(243, 216, 98, 0.719);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+.header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  border-radius: 8px;
+  padding: 10px;
+  margin: 10px;
+  background-color: rgb(223, 199, 92);
+}
+.logodiv {
+  position: absolute;
+  left: 20px;
+}
+#logo {
+  width: 300px;
+  height: 300px;
+}
+.menu {
+  padding: 0;
+  margin-left: 1500px;
+  background-color: aliceblue;
+  border-radius: 8px;
+  width: 30%;
+}
+ul a {
+  text-decoration: none;
+}
+.login-a {
+  margin-left: 30px;
+  padding: 10px;
+  color: black;
+  border-radius: 8px;
+}
+.login-a:hover {
+  background-color: rgba(194, 127, 26, 0.527);
+}
+.Loginform {
+  border-radius: 25px;
+  width: 450px;
+  height: 480px;
+  box-shadow: 22px 13px rgb(236, 198, 121);
+  background: white;
+  color: black;
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  box-sizing: border-box;
+  text-align: center;
+}
+h1 {
+  margin-top: 16px;
+  text-align: center;
+}
+.inputi {
+  text-align: center;
+  border-radius: 50px;
+  background-color: rgba(226, 223, 223, 0.877);
+  outline: none;
+  width: 350px;
+  height: 55px;
+  margin-top: 20px;
+  color: black;
+  font-size: 13px;
+  transition: 0.25s;
+  border: 0;
+}
+
+.inputi:focus {
+  width: 400px;
+  border: 2px solid aqua;
+}
+.submitbutton {
+  background-color: cornflowerblue;
+  border: none;
+  border-radius: 50px;
+  outline: none;
+  width: 250px;
+  height: 60px;
+  color: white;
+  font-size: 18px;
+  margin-top: 70px;
+  margin-left: 1px;
+  text-align: center;
+  transition: 0.5s;
+}
+.submitbutton:hover {
+  width: 290px;
+  height: 65px;
+  border: 2px solid aqua;
+}
+
+.register-div {
+  margin-top: 15px;
+  text-align: center;
+  font-size: 13px;
+}
+.fa {
+  padding: 18px;
+  width: 15px;
+  height: 15px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 50%;
+  margin-right: 40px;
+  margin-top: 10px;
+}
+.fa:hover {
+  opacity: 0.7;
+}
+.fa-facebook {
+  background: #3b5998;
+  color: white;
+}
+.fa-google {
+  background: #dd4b39;
+  color: white;
+}
+.fa-instagram {
+  background: #125688;
+  color: white;
+}
+.social-logos {
+  text-align: center;
+  margin-top: 20px;
+}
+.footer {
+  height: 140px;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: rgb(223, 199, 92);
+  color: white;
+  text-align: center;
+}
+.register {
+  width: 700px;
+  height: 600px;
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-sizing: border-box;
+  padding: 20px 10px;
+  margin: 10px;
+  box-shadow: 22px 13px rgb(236, 198, 121);
+  border-radius: 25px;
+  background: white;
+  color: black;
+}
+#input-emri {
+  width: 220px;
+  height: 35px;
+  margin-left: 15px;
+}
+.emri-div {
+  width: 275px;
+  position: absolute;
+  right: 380px;
+  display: flex;
+  align-items: center;
+}
+#input-mbiemri {
+  width: 220px;
+  height: 35px;
+  margin-left: 14px;
+}
+.mbiemri-div {
+  width: 295px;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  right: 30px;
+}
+.personal-info {
+  display: flex;
+}
+
+.email-div {
+  width: 275px;
+  position: absolute;
+  right: 380px;
+  display: flex;
+  align-items: center;
+  margin-top: 75px;
+}
+#input-email {
+  width: 220px;
+  height: 35px;
+  margin-left: 9px;
+}
+.pass-div {
+  max-width: 295px;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  right: 30px;
+  margin-top: 75px;
+}
+#input-pass {
+  width: 220px;
+  height: 35px;
+  margin-left: 5px;
+}
+.phone-div {
+  width: 275px;
+  position: absolute;
+  right: 380px;
+  margin-top: 155px;
+}
+#input-phone {
+  width: 220px;
+  height: 35px;
+  margin-left: 46px;
+}
+.phone-label {
+  margin-left: 46px;
+}
+
+.birthdate-div {
+  width: 165px;
+  position: absolute;
+  align-items: center;
+  right: 160px;
+  margin-top: 155px;
+}
+#input-birthday {
+  width: 120px;
+  height: 35px;
+  right: 0;
+}
+
+.gjinia {
+  width: 130px;
+  height: 55px;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  right: 30px;
+  margin-top: 155px;
+}
+
+.slctimg {
+  width: 380px;
+  position: absolute;
+  display: flex;
+  right: 160px;
+  text-align: center;
+  bottom: 140px;
+}
+.submit-div {
+  text-align: center;
+}
+
+.registerbutton {
+  background-color: cornflowerblue;
+  border: none;
+  border-radius: 50px;
+  outline: none;
+  width: 180px;
+  height: 40px;
+  color: white;
+  font-size: 18px;
+  text-align: center;
+  transition: 0.5s;
+}
+.registerbutton:hover {
+  width: 230px;
+  height: 50px;
+  border: 2px solid aqua;
+}
+
+.container {
+  width: 100%;
+  position: absolute;
+  display: flex;
+  top: 0;
+  left: 0;
+}
+.shteti-group {
+  width: 275px;
+  position: absolute;
+  right: 380px;
+  display: flex;
+  align-items: center;
+  margin-top: 355px;
+}
+.qyteti-group {
+  width: 295px;
+  position: absolute;
+  right: 30px;
+  display: flex;
+  align-items: center;
+  margin-top: 355px;
+}
+
+select {
+  height: 34px;
+  width: 240px;
+}
+#select2 {
+  margin-left: 20px;
+}
+.r-input,
+.slct {
+  text-align: center;
+  border-radius: 50px;
+  background-color: rgba(226, 223, 223, 0.877);
+  outline: none;
+  color: black;
+  font-size: 13px;
+  transition: 0.25s;
+  border: 0;
+}
+.r-input:focus {
+  width: 300px;
+  border: 2px solid aqua;
+}
+.slct:focus {
+  width: 300px;
+  border: 2px solid aqua;
+}
+#pass-requirements {
+  position: absolute;
+  width: 350px;
+  height: 400px;
+  margin-left: 600px;
+  margin-top: 300px;
+  background-color: rgb(243, 229, 229);
+  border-radius: 20px;
+  text-align: center;
+}
+#btn1 {
+  width: 100px;
+  height: 100px;
+}
+.headers-paragraphs {
+  font-size: 40px;
+  font-family: inherit;
+  color: rgb(122, 139, 108);
+}
+.registerpg {
+  text-align: center;
+}
+hr {
+  border: 2px solid white;
+  width: 50%;
+  margin-top: 50px;
+  background-color: white;
+  border-radius: 50px;
+}
+.termsparagraph {
+  margin-top: 380px;
+  text-align: center;
+}
+
+@media only screen and (max-width: 390px) {
+  .Loginform {
+    border-radius: 25px;
+    width: 210px;
+    height: 240px;
+    box-shadow: 22px 13px rgb(236, 198, 121);
+    background: white;
+    color: black;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    box-sizing: border-box;
+    text-align: center;
+  }
+  h1 {
+    margin-top: 16px;
+    text-align: center;
+    font-size: 15px;
+  }
+  .inputi {
+    text-align: center;
+    border-radius: 50px;
+    background-color: rgba(226, 223, 223, 0.877);
+    outline: none;
+    width: 150px;
+    height: 25px;
+    margin-top: 20px;
+    color: black;
+    font-size: 10px;
+    transition: 0.25s;
+    border: 0;
+  }
+
+  .inputi:focus {
+    width: 180px;
+    border: 2px solid aqua;
+  }
+  .submitbutton {
+    background-color: cornflowerblue;
+    border: none;
+    border-radius: 50px;
+    outline: none;
+    width: 150px;
+    height: 30px;
+    color: white;
+    font-size: 18px;
+    margin-top: 70px;
+    margin-left: 1px;
+    text-align: center;
+    transition: 0.5s;
+  }
+  .submitbutton:hover {
+    width: 180px;
+    height: 45px;
+    border: 2px solid aqua;
+  }
+  .register-div {
+    margin-top: 15px;
+    text-align: center;
+    font-size: 9px;
+  }
+  .header {
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+  }
+  .logodiv {
+    margin-left: 75px;
+  }
+  #logo {
+    width: 200px;
+    height: 200px;
+    margin-bottom: 70px;
+  }
+  .menu {
+    background-color: aliceblue;
+    border-radius: 8px;
+    width: 350px;
+    margin: 0;
+    margin-top: 100px;
+  }
+  ul a {
+    text-decoration: none;
+  }
+  .login-a {
+    margin-left: 4px;
+    padding: 2px;
+    color: black;
+    border-radius: 8px;
+    font-size: 12px;
+  }
+  .login-a:hover {
+    background-color: rgba(194, 127, 26, 0.527);
+  }
+  .social-logos {
+    padding-left: 38px;
+  }
+  .fa {
+    width: 7px;
+    height: 5px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 50%;
+    align-items: center;
+    margin-top: 40px;
+  }
+  .fa:hover {
+    opacity: 0.7;
+  }
+  .fa-facebook {
+    background: #3b5998;
+    color: white;
+  }
+  .fa-google {
+    background: #dd4b39;
+    color: white;
+  }
+  .fa-instagram {
+    background: #125688;
+    color: white;
+  }
+
+  .footer {
+    position: static;
+    width: 100%;
+    background-color: rgb(223, 199, 92);
+    color: white;
+    text-align: center;
+    margin-top: 600px;
+    font-size: 11px;
+  }
+  .footer1 {
+    position: static;
+    width: 100%;
+    background-color: rgb(223, 199, 92);
+    color: white;
+    text-align: center;
+    margin-top: 900px;
+    font-size: 11px;
+  }
+  /* Register Media query */
+
+  .register {
+    width: 280px;
+    height: 750px;
+    top: 80%;
+    box-sizing: border-box;
+    margin: 10px;
+    box-shadow: 22px 13px rgb(236, 198, 121);
+    border-radius: 25px;
+    background: white;
+    color: black;
+    display: flex;
+    flex-direction: column;
+  }
+
+  #input-emri {
+    width: 220px;
+    height: 25px;
+  }
+  .emri-div {
+    display: flex;
+    flex-direction: column;
+    width: 280px;
+    left: 0;
+    text-align: center;
+  }
+  #input-mbiemri {
+    width: 220px;
+    height: 25px;
+  }
+  .mbiemri-div {
+    display: flex;
+    flex-direction: column;
+    width: 280px;
+    text-align: center;
+    margin-top: 70px;
+    left: 0;
+  }
+
+  .email-div {
+    display: flex;
+    flex-direction: column;
+    width: 280px;
+    position: absolute;
+    text-align: center;
+    margin-top: 130px;
+    left: 0;
+  }
+  #input-email {
+    width: 220px;
+    height: 25px;
+  }
+  .pass-div {
+    display: flex;
+    flex-direction: column;
+    width: 280px;
+    position: absolute;
+    text-align: center;
+    margin-top: 190px;
+    left: 0%;
+  }
+  #input-pass {
+    width: 220px;
+    height: 25px;
+  }
+  .phone-div {
+    display: flex;
+    flex-direction: column;
+    width: 280px;
+    margin-top: 250px;
+    text-align: center;
+    right: 6.5%;
+  }
+  #input-phone {
+    width: 220px;
+    height: 25px;
+  }
+
+  .birthdate-div {
+    width: 280px;
+    position: absolute;
+    text-align: center;
+    margin-top: 320px;
+    left: 0%;
+  }
+  #input-birthday {
+    width: 120px;
+    height: 25px;
+  }
+
+  .gjinia {
+    width: 280px;
+    height: 20px;
+    margin-top: 370px;
+    left: 0%;
+    align-items: center;
+    display: flex;
+    padding-left: 50px;
+  }
+  .gjiniadiv {
+    margin-left: 50px;
+  }
+
+  .slctimg {
+    display: flex;
+    flex-direction: column;
+    width: 280px;
+    text-align: center;
+    left: 0%;
+    bottom: 230px;
+  }
+  #imgslct {
+    margin-left: 50px;
+    font-size: 11px;
+  }
+  .submit-div {
+    text-align: center;
+  }
+
+  .registerbutton {
+    background-color: cornflowerblue;
+    border: none;
+    border-radius: 50px;
+    outline: none;
+    width: 180px;
+    height: 40px;
+    color: white;
+    font-size: 18px;
+    margin-top: 20px;
+    text-align: center;
+    transition: 0.5s;
+  }
+  .registerbutton:hover {
+    width: 230px;
+    height: 50px;
+    border: 2px solid aqua;
+  }
+
+  .container {
+    width: 100%;
+    position: absolute;
+    display: flex;
+    top: 0;
+    left: 0;
+  }
+  .shteti-group {
+    display: flex;
+    flex-direction: column;
+    width: 280px;
+    text-align: center;
+    margin-top: 540px;
+    left: 0%;
+  }
+  .qyteti-group {
+    display: flex;
+    flex-direction: column;
+    width: 280px;
+    text-align: center;
+    margin-top: 600px;
+    right: 2.8%;
+  }
+  .termsparagraph {
+    margin-top: 620px;
+    font-size: 9px;
+  }
+
+  select {
+    height: 34px;
+    width: 220px;
+  }
+  .r-input,
+  .slct {
+    height: 25px;
+    text-align: center;
+    border-radius: 50px;
+    background-color: rgba(226, 223, 223, 0.877);
+    outline: none;
+    color: black;
+    font-size: 13px;
+    transition: 0.25s;
+    border: 0;
+  }
+  .r-input:focus {
+    width: 230px;
+    border: 2px solid aqua;
+  }
+  .slct:focus {
+    width: 230px;
+    border: 2px solid aqua;
+  }
+  #pass-requirements {
+    position: absolute;
+    width: 350px;
+    height: 400px;
+    margin-left: 600px;
+    margin-top: 300px;
+    background-color: rgb(243, 229, 229);
+    border-radius: 20px;
+    text-align: center;
+  }
+  #btn1 {
+    width: 100px;
+    height: 100px;
+  }
+  .headers-paragraphs {
+    font-size: 20px;
+    font-family: inherit;
+    color: rgb(122, 139, 108);
+  }
+  .registerpg {
+    text-align: center;
+  }
+  hr {
+    border: 2px solid white;
+    width: 50%;
+    margin-top: 10px;
+    background-color: white;
+    border-radius: 50px;
+  }
+  label {
+    font-size: 11px;
+  }
+}
