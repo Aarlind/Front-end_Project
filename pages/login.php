@@ -63,7 +63,7 @@ if (isset($_POST['submit'])) {
                 <input name="password" class="inputi" id="passId" type="password" placeholder="Enter Password">
                 <div class="register-div"><span class="login-span">If you don't have an account click here:</span> <a class="login-a-register" href="../pages/register.php">Register</a><br><a href="#forgotpw">Forgot your Password?</a></div>
 
-                <button name="submit" id="btn" class="submitbutton" type="submit">Log In</button>
+                <button onclick="return checkInputs()" name="submit" id="btn" class="submitbutton" type="submit">Log In</button>
             </div>
 
         </form>

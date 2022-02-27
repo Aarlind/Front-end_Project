@@ -17,7 +17,7 @@ if (isset($_POST['contactsubmit'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="../css/meettheteam_contact.css?version=51">
+    <link rel="stylesheet" href="../css/meettheteam_contact.css?v=1">
     <script src="../js/Log_In_Register.js.js"></script>
     <link rel="icon" href="../img/buytime-icon.png" type="image/icon type">
 </head>

@@ -291,12 +291,23 @@ hr {
     margin: 0;
     margin-top: 100px;
   }
+  ul {
+    display: flex;
+    list-style: none;
+    flex-wrap: nowrap;
+    padding: 0px;
+    justify-content: space-between;
+  }
+  li {
+    margin-right: 5px;
+  }
   ul a {
     text-decoration: none;
   }
   .login-a {
-    margin-left: 4px;
-    padding: 2px;
+    margin-left: 0px;
+    margin-right: 0px;
+    padding: 0px;
     color: black;
     border-radius: 8px;
     font-size: 12px;

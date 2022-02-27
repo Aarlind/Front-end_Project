@@ -12,7 +12,7 @@ class ControllerMenu
 
     public function insertData($request)
     {
-
+        $request['image'] = '../img/' . $request['image'];
         $query = $this->db->pdo->prepare('INSERT INTO buytimeuser (Emri, Mbiemri, Email, Password, Telefoni, DataLindjes, Gjinia, Shteti, Qyteti, Foto)
         VALUES(:Emri, :Mbiemri, :Email, :Password, :Telefoni, :DataLindjes, :Gjinia, :Shteti, :Qyteti, :Foto)');
 
@@ -48,10 +48,20 @@ class ControllerMenu
         }
         return false;
     }
+    public function readAdmins()
+    {
+        $admins = $this->db->pdo->query('SELECT * FROM buytimeuser where Roli = 1');
+        return $admins->fetchAll();
+    }
     public function readData()
     {
         $query = $this->db->pdo->query('SELECT * FROM produkti');
         return $query->fetchAll();
+    }
+    public function readInbox()
+    {
+        $inbox = $this->db->pdo->query('SELECT * FROM contact');
+        return $inbox->fetchAll();
     }
     public function insert($request, $getEmailIPerdoruesit)
     {

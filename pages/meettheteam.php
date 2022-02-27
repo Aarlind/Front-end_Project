@@ -14,7 +14,7 @@ if ($_SESSION['email'] == '' && $_SESSION['password'] == '') {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meet The Team</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="../css/meettheteam_contact.css?version=51">
+    <link rel="stylesheet" href="../css/meettheteam_contact.css?v=2">
     <script src="../js/script.js?v=1"></script>
     <link rel="icon" href="../img/buytime-icon.png" type="image/icon type">
 
@@ -52,33 +52,28 @@ if ($_SESSION['email'] == '' && $_SESSION['password'] == '') {
         </div>
         <hr>
         <div class="content-div">
+
+            <?php
+            require_once '../controllers/ControllerMenu.php';
+            $admins = new ControllerMenu;
+            $allAdmins = $admins->readAdmins();
+            for ($j = 0; $j < count($allAdmins); $j++) {
+                echo '
             <div class="firstmember-div">
-
-
                 <div class="img1">
-                    <img class="member-images" src="../img/firstmember.jpg" alt="">
+                    <img class="member-images" src="' . $allAdmins[$j]['Foto'] . '" alt="">
                     <div class="firstmember-name">
-                        <p class="membername">Arlind Aliu</p>
+                        <p class="membername">' . $allAdmins[$j]['Emri'] . " " . $allAdmins[$j]['Mbiemri'] . '</p>
                     </div>
                     <div class="firstmember-info">
-                        <q>Sofware Engineer</q>
+                        <q>' . $allAdmins[$j]['Profesioni'] . '</q>
                     </div>
                 </div>
             </div>
-            <div class="secondmember-div">
 
-
-                <div class="img2">
-
-                    <img class="member-images" src="../img/secondmember.jpg" alt="">
-                    <div class="secondmember-name">
-                        <p class="membername">Rinor Rexhepi</p>
-                    </div>
-                    <div class="secondmember-info">
-                        <q>Full Stack Developer</q>
-                    </div>
-                </div>
-            </div>
+        ';
+            }
+            ?>
 
         </div>
 

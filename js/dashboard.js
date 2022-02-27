@@ -35,6 +35,7 @@ function myFunction() {
   function editProducts(){
     var x = document.getElementsByName("divat");
     x[1].classList.add("show-content");
+    x[5].classList.remove("show-content");
     x[0].classList.remove("show-content1");
     x[2].classList.remove("show-content1");
     x[3].classList.remove("show-content");
@@ -43,6 +44,7 @@ function myFunction() {
   function addProducts(){
     var x = document.getElementsByName("divat");
     x[2].classList.add("show-content1");
+    x[5].classList.remove("show-content");
     x[1].classList.remove("show-content");
     x[0].classList.remove("show-content1");
     x[3].classList.remove("show-content");
@@ -51,6 +53,7 @@ function myFunction() {
 function deleteProducts(){
   var x = document.getElementsByName("divat");
   x[3].classList.add("show-content");
+  x[5].classList.remove("show-content");
   x[2].classList.remove("show-content1");
   x[1].classList.remove("show-content");
   x[0].classList.remove("show-content1");
@@ -60,6 +63,16 @@ function deleteProducts(){
 function listOfUsers(){
   var x = document.getElementsByName("divat");
   x[4].classList.add("show-content");
+  x[5].classList.remove("show-content");
+  x[3].classList.remove("show-content");
+  x[2].classList.remove("show-content1");
+  x[1].classList.remove("show-content");
+  x[0].classList.remove("show-content1");
+}
+function inbox(){
+  var x = document.getElementsByName("divat");
+  x[5].classList.add("show-content");
+  x[4].classList.remove("show-content");
   x[3].classList.remove("show-content");
   x[2].classList.remove("show-content1");
   x[1].classList.remove("show-content");

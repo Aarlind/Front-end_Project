@@ -1,6 +1,11 @@
 <?php
 require_once '../controllers/ControllerMenu.php';
 session_start();
+
+if ($_SESSION['Roli'] != 1) {
+    header("Location: index.php");
+    die();
+}
 $menu = new ControllerMenu();
 $getEmailIPerdoruesit = $_SESSION['email'];
 if (isset($_POST['submitbutton'])) {
@@ -16,10 +21,10 @@ if (isset($_POST['submitbutton'])) {
 <head>
 
     <title>Dashboard</title>
-    <link rel="stylesheet" href="../css/dashboard.css?version=51">
+    <link rel="stylesheet" href="../css/dashboard.css?v=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="icon" href="../img/buytime-icon.png" type="image/icon type">
-    <script src="../js/dashboard.js?version=51"></script>
+    <script src="../js/dashboard.js?v=1"></script>
 </head>
 
 <body>
@@ -65,6 +70,9 @@ if (isset($_POST['submitbutton'])) {
             <ul>
                 <button onclick="listOfUsers()" class="listbutton">
                     <li>List of users</li>
+                </button>
+                <button onclick="inbox()" class="listbutton">
+                    <li>Inbox</li>
                 </button>
             </ul>
             <p id="menudashparagraph">Sales</p>
@@ -116,7 +124,7 @@ if (isset($_POST['submitbutton'])) {
                     <hr class="dotedHr">
                 </div>
                 <div id="statistic3" class="statistics">
-                    <p class="dash-paragraph">Numri i Perdorueseve</p>
+                    <p class="dash-paragraph">Numri i Admineve</p>
                     <p class="adminNumbersP"><?php
                                                 $adminNumbers = $menu->getAdmins();
                                                 echo $adminNumbers;
@@ -285,7 +293,38 @@ if (isset($_POST['submitbutton'])) {
                 <?php endforeach; ?>
             </table>
         </div>
-        <!--- ----->
+        <!--- inbox  ----->
+        <div name="divat" class="inbox">
+
+            <table>
+                <p class="productparagraph">Mesazhet</p>
+                <hr id="shtoprodukthr">
+                <tr>
+                    <th class="thclass">Emri</th>
+                    <th class="thclass">Mbiemri</th>
+                    <th class="thclass">Email</th>
+                    <th class="thclass">Telefoni</th>
+                    <th class="thclass">Mesazhi</th>
+
+                </tr>
+
+                <?php
+                $m = new ControllerMenu;
+                $messages = $m->readInbox();
+                foreach ($messages as $user) {
+                ?>
+                    <tr>
+                        <td class="tdclass"><?php echo $user['Emri']; ?></td>
+                        <td class="tdclass"><?php echo $user['Mbiemri']; ?></td>
+                        <td class="tdclass"><?php echo $user['Email']; ?></td>
+                        <td class="tdclass"><?php echo $user['Telefoni']; ?></td>
+                        <td class="tdclass"><?php echo $user['Mesazhi']; ?></td>
+
+                    </tr>
+                <?php } ?>
+            </table>
+        </div>
+        <!--- --->
     </div>
 
 
