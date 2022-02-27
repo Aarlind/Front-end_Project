@@ -1,11 +1,17 @@
 <?php
 require_once '../controllers/ControllerMenu.php';
 session_start();
-$menu = new ControllerMenu;
+
+$controller = new ControllerMenu;
 if (isset($_POST['submit'])) {
-  $email = $_POST['email'];
-  $menu->insertData($_POST, $email);
+  $controller->insertData($_POST);
+  if ($controller->validateRegisterEmptyData($_POST) == true) {
+    header("Location: register.php");
+  } else {
+    header("Location: successfully.php");
+  }
 }
+
 ?>
 
 
@@ -17,7 +23,7 @@ if (isset($_POST['submit'])) {
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Register</title>
-  <link rel="stylesheet" href="../css/logregister.css" />
+  <link rel="stylesheet" href="../css/logregister.css?version=51" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
   <script src="../js/Log_In_Register.js.js"></script>
   <link rel="icon" href="../img/buytime-icon.png" type="image/icon type">
@@ -31,20 +37,30 @@ if (isset($_POST['submit'])) {
       </div>
       <div class="menu">
         <ul>
+          <li><?php
+              if (isset($_SESSION['Roli']) && $_SESSION['Roli'] == 1) {
+              ?>
+
+              <a style="color: red;" target="_blank" class="login-a" href="../pages/dashboard.php">Dashboard</a>
+            <?php
+
+              }
+            ?>
+          </li>
           <?php
-          if (isset($_SESSION['Roli']) && $_SESSION['Roli'] == 1) {
+          if (isset($_SESSION['email'])) {
           ?>
 
-            <a target="_blank" class="login-a" href="../pages/dashboard.php">Dashboard</a>
+            <li><a class="login-a" href="../pages/index.php">Home</a></li>
+            <li><a class="login-a" href="../pages/shop.php">Shop</a></li>
+            <li><a class="login-a" href="../pages/meettheteam.php">Meet the Team</a></li>
           <?php
-
           }
           ?>
-          <a class="login-a" href="../pages/index.php">Home</a>
-          <a class="login-a" href="../pages/contact.php">Contact</a>
-          <a class="login-a" href="../pages/shop.php">Shop</a>
-          <a class="login-a" href="../pages/meettheteam.php">Meet the Team</a>
-          <a class="login-a" href="../pages/login.php">Login</a>
+          <li><a class="login-a" href="../pages/contact.php">Contact</a></li>
+          <li><a class="login-a" href="../pages/register.php">Sign Up</a></li>
+          <li><a class="login-a" href="../pages/login.php">Login</a></li>
+
         </ul>
       </div>
     </div>
@@ -102,7 +118,7 @@ if (isset($_POST['submit'])) {
             <label for="Numri">Nr Telefonit</label>
           </div>
           <div>
-            <input class="r-input" id="input-phone" type="number" placeholder="Nr Telefonit" />
+            <input name="telefoni" class="r-input" id="input-phone" type="number" placeholder="Nr Telefonit" />
           </div>
         </div>
 
@@ -114,10 +130,10 @@ if (isset($_POST['submit'])) {
         <div class="gjinia">
           <label for="gjinia">Gjinia</label>
           <div class="gjiniadiv">
-            <input class="gender" type="checkbox" id="male" value="Mashkull">
+            <input name="gjinia" class="gender" type="checkbox" id="male" value="M">
             <label for="mashkull">Mashkull</label>
             <div>
-              <input name="gjinia" class="gender" type="checkbox" id="female">
+              <input name="gjinia" class="gender" type="checkbox" id="female" value="F">
               <label for="femer">Femer</label>
             </div>
           </div>
@@ -159,7 +175,7 @@ if (isset($_POST['submit'])) {
         </div>
 
         <div class="submit-div">
-          <button name="submit" class="registerbutton" type="submit">Register</button>
+          <button onclick="return redirectToLogin()" name="submit" class="registerbutton" type="submit">Register</button>
         </div>
 
       </form>

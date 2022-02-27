@@ -28,6 +28,8 @@ function myFunction() {
       x[0].classList.add("show-content1");
       x[1].classList.remove("show-content");
       x[2].classList.remove("show-content1");
+      x[3].classList.remove("show-content");
+      x[4].classList.remove("show-content");
   }
         
   function editProducts(){
@@ -35,11 +37,31 @@ function myFunction() {
     x[1].classList.add("show-content");
     x[0].classList.remove("show-content1");
     x[2].classList.remove("show-content1");
+    x[3].classList.remove("show-content");
+    x[4].classList.remove("show-content");
   }
   function addProducts(){
     var x = document.getElementsByName("divat");
     x[2].classList.add("show-content1");
     x[1].classList.remove("show-content");
     x[0].classList.remove("show-content1");
+    x[3].classList.remove("show-content");
+    x[4].classList.remove("show-content");
   }
+function deleteProducts(){
+  var x = document.getElementsByName("divat");
+  x[3].classList.add("show-content");
+  x[2].classList.remove("show-content1");
+  x[1].classList.remove("show-content");
+  x[0].classList.remove("show-content1");
+  x[4].classList.remove("show-content");
+}
 
+function listOfUsers(){
+  var x = document.getElementsByName("divat");
+  x[4].classList.add("show-content");
+  x[3].classList.remove("show-content");
+  x[2].classList.remove("show-content1");
+  x[1].classList.remove("show-content");
+  x[0].classList.remove("show-content1");
+}

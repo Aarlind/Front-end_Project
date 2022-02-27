@@ -1,5 +1,9 @@
 <?php
 session_start();
+if ($_SESSION['email'] == '' && $_SESSION['password'] == '') {
+    header("Location: login.php");
+    die();
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -10,8 +14,8 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meet The Team</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="../css/meettheteam_contact.css">
-    <script src="../js/script.js"></script>
+    <link rel="stylesheet" href="../css/meettheteam_contact.css?version=51">
+    <script src="../js/script.js?v=1"></script>
     <link rel="icon" href="../img/buytime-icon.png" type="image/icon type">
 
 </head>
@@ -24,20 +28,21 @@ session_start();
             </div>
             <div class="menu">
                 <ul>
-                    <?php
-                    if (isset($_SESSION['Roli']) && $_SESSION['Roli'] == 1) {
-                    ?>
+                    <li><?php
+                        if (isset($_SESSION['Roli']) && $_SESSION['Roli'] == 1) {
+                        ?>
 
-                        <a target="_blank" class="login-a" href="../pages/dashboard.php">Dashboard</a>
-                    <?php
+                            <a style="color: red;" target="_blank" class="login-a" href="../pages/dashboard.php">Dashboard</a>
+                        <?php
 
-                    }
-                    ?>
-                    <a class="login-a" href="../pages/index.php">Home</a>
-                    <a class="login-a" href="../pages/contact.php">Contact</a>
-                    <a class="login-a" href="../pages/shop.php">Shop</a>
-                    <a class="login-a" href="../pages/meettheteam.php">Meet the Team</a>
-                    <a class="login-a" href="../pages/login.php">Login</a>
+                        }
+                        ?>
+                    </li>
+                    <li><a class="login-a" href="../pages/index.php">Home</a></li>
+                    <li><a class="login-a" href="../pages/shop.php">Shop</a></li>
+                    <li><a class="login-a" href="../pages/meettheteam.php">Meet the Team</a></li>
+                    <li><a class="login-a" href="../pages/contact.php">Contact</a></li>
+                    <li><a class="login-a" href="logout.php">Logout</a></li>
 
                 </ul>
             </div>
@@ -74,12 +79,6 @@ session_start();
                     </div>
                 </div>
             </div>
-
-
-
-
-
-
 
         </div>
 

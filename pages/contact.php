@@ -1,5 +1,11 @@
 <?php
+
+require_once '../controllers/ControllerMenu.php';
 session_start();
+$controller = new ControllerMenu;
+if (isset($_POST['contactsubmit'])) {
+    $controller->getContactMessages($_POST);
+}
 ?>
 
 <!DOCTYPE html>
@@ -11,7 +17,7 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="../css/meettheteam_contact.css">
+    <link rel="stylesheet" href="../css/meettheteam_contact.css?version=51">
     <script src="../js/Log_In_Register.js.js"></script>
     <link rel="icon" href="../img/buytime-icon.png" type="image/icon type">
 </head>
@@ -24,20 +30,44 @@ session_start();
             </div>
             <div class="menu">
                 <ul>
+                    <li><?php
+                        if (isset($_SESSION['Roli']) && $_SESSION['Roli'] == 1) {
+                        ?>
+
+                            <a style="color: red;" target="_blank" class="login-a" href="../pages/dashboard.php">Dashboard</a>
+                        <?php
+
+                        }
+                        ?>
+                    </li>
                     <?php
-                    if (isset($_SESSION['Roli']) && $_SESSION['Roli'] == 1) {
+                    if (isset($_SESSION['email'])) {
                     ?>
-
-                        <a target="_blank" class="login-a" href="../pages/dashboard.php">Dashboard</a>
+                        <li><a class="login-a" href="../pages/index.php">Home</a></li>
+                        <li><a class="login-a" href="../pages/shop.php">Shop</a></li>
+                        <li><a class="login-a" href="../pages/meettheteam.php">Meet the Team</a></li>
                     <?php
-
                     }
                     ?>
-                    <a class="login-a" href="../pages/index.php">Home</a>
-                    <a class="login-a" href="../pages/contact.php">Contact</a>
-                    <a class="login-a" href="../pages/shop.php">Shop</a>
-                    <a class="login-a" href="../pages/meettheteam.php">Meet the Team</a>
-                    <a class="login-a" href="../pages/login.php">Login</a>
+
+                    <li><a class="login-a" href="../pages/contact.php">Contact</a></li>
+                    <?php
+                    if (!isset($_SESSION['email'])) {
+                    ?>
+                        <li><a class="login-a" href="../pages/register.php">Sign Up</a></li>
+                        <li><a class="login-a" href="../pages/login.php">Login</a></li>
+                    <?php
+                    }
+                    ?>
+
+                    <?php
+                    if (isset($_SESSION['email'])) {
+                    ?>
+                        <li><a class="login-a" href="logout.php">Logout</a></li>
+                    <?php
+                    }
+                    ?>
+
                 </ul>
             </div>
         </div>
@@ -51,37 +81,39 @@ session_start();
                 <h2>Emaili</h2>
                 contact@buytime.com
             </div>
-            <div class="contact-div">
-                <div class="contacts-child">
-                    <p class="inputsname">Emri</p> <input class="averageinputs" id="emri" type="text">
-                </div>
-                <div class="contacts-child">
-                    <p class="inputsname">Mbiemri</p> <input class="averageinputs" type="text">
-                </div>
-                <div class="contacts-child">
-                    <p class="inputsname">Adresa</p> <input class="adress-input" type="text" name="" placeholder="Qyteti, Rruga, Nr Shtëpisë, Zip Kodi">
-                </div>
-                <div class="contacts-child">
-                    <p class="inputsname">Email</p> <input class="averageinputs" id="email" type="text">
-                </div>
-                <div class="contacts-child">
-                    <p class="inputsname">Nr Tel</p> <input class="averageinputs" type="text">
-                </div>
-                <div class="contacts-child">
-                    <div>
-                        <p class="inputsname">Subjekti</p> <input id="subjekti-input" type="text">
+            <form method="POST">
+                <div class="contact-div">
+                    <div class="contacts-child">
+                        <p class="inputsname">Emri</p> <input name="emri" class="averageinputs" id="emri" type="text">
                     </div>
-                </div>
-                <div class="contacts-child">
-                    <p class="inputsname">Mesazhi</p> <textarea name="" id="mesazhi-input" cols="30" rows="10"></textarea>
+                    <div class="contacts-child">
+                        <p class="inputsname">Mbiemri</p> <input name="mbiemri" class="averageinputs" type="text">
+                    </div>
+                    <div class="contacts-child">
+                        <p class="inputsname">Adresa</p> <input name="adresa" class="adress-input" type="text" name="" placeholder="Qyteti, Rruga, Nr Shtëpisë, Zip Kodi">
+                    </div>
+                    <div class="contacts-child">
+                        <p class="inputsname">Email</p> <input name="email" class="averageinputs" id="email" type="text">
+                    </div>
+                    <div class="contacts-child">
+                        <p class="inputsname">Nr Tel</p> <input name="telefoni" class="averageinputs" type="text">
+                    </div>
+                    <div class="contacts-child">
+                        <div>
+                            <p class="inputsname">Subjekti</p> <input name="subjekti" id="subjekti-input" type="text">
+                        </div>
+                    </div>
+                    <div class="contacts-child">
+                        <p class="inputsname">Mesazhi</p> <textarea name="mesazhi" id="mesazhi-input" cols="30" rows="10"></textarea>
+
+                    </div>
+                    <div class="button-div">
+                        <button name="contactsubmit" id="button" type="submit">Dërgo</button>
+
+                    </div>
 
                 </div>
-                <div class="button-div">
-                    <button id="button" type="submit">Dërgo</button>
-
-                </div>
-
-            </div>
+            </form>
 
         </div>
 
@@ -89,7 +121,7 @@ session_start();
 
 
         <!-----------Footer--------->
-        <div class="footer1">
+        <div class="footer">
             <div class="social-logos"><a href="#" class="fa fa-facebook"></a>
                 <a href="#" class="fa fa-google"></a>
                 <a href="#" class="fa fa-instagram"></a>

@@ -1,10 +1,10 @@
 <?php
 require '../controllers/ControllerMenu.php';
 session_start();
-
-// $menu = new ControllerMenu;
-// $printAll = $menu->validateDataa();
-// echo $printAll;
+if ($_SESSION['email'] == '' && $_SESSION['password'] == '') {
+    header("Location: login.php");
+    die();
+}
 ?>
 
 
@@ -17,8 +17,8 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="../css/style.css">
-    <script src="../js/script.js"></script>
+    <link rel="stylesheet" href="../css/style.css?v=2">
+    <script src="../js/script.js?v=1"></script>
     <link rel="icon" href="../img/buytime-icon.png" type="image/icon type">
 </head>
 
@@ -30,20 +30,21 @@ session_start();
             </div>
             <div class="menu">
                 <ul>
-                    <?php
-                    if (isset($_SESSION['Roli']) && $_SESSION['Roli'] == 1) {
-                    ?>
+                    <li><?php
+                        if (isset($_SESSION['Roli']) && $_SESSION['Roli'] == 1) {
+                        ?>
 
-                        <a target="_blank" class="login-a" href="../pages/dashboard.php">Dashboard</a>
-                    <?php
+                            <a style="color: red;" target="_blank" class="login-a" href="../pages/dashboard.php">Dashboard</a>
+                        <?php
 
-                    }
-                    ?>
-                    <a class="login-a" href="../pages/index.php">Home</a>
-                    <a class="login-a" href="../pages/contact.php">Contact</a>
-                    <a class="login-a" href="../pages/shop.php">Shop</a>
-                    <a class="login-a" href="../pages/meettheteam.php">Meet the Team</a>
-                    <a class="login-a" href="logout.php">Logout</a>
+                        }
+                        ?>
+                    </li>
+                    <li><a class="login-a" href="../pages/index.php">Home</a></li>
+                    <li><a class="login-a" href="../pages/shop.php">Shop</a></li>
+                    <li><a class="login-a" href="../pages/meettheteam.php">Meet the Team</a></li>
+                    <li><a class="login-a" href="../pages/contact.php">Contact</a></li>
+                    <li><a class="login-a" href="logout.php">Logout</a></li>
 
                 </ul>
             </div>
@@ -71,93 +72,46 @@ session_start();
         <div class="content-div1">
 
 
-            <div onclick="shopRedirect()" class="item-div">
+            <?php
+            $products = new ControllerMenu;
+            $all = $products->readData();
+            for ($i = 0; $i < 4; $i++) {
 
-                <div class="img-div">
-                    <img class="image" src="../img/image619e1cc1eb9f7.webp" alt="">
-                </div>
-                <div class="product-name-div">
-                    <div class="rating-css">
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star"></span>
-                        <span class="fa fa-star"></span>
+
+
+                echo '     <div onclick="click1()" class="item-div">
+
+                    <div class="img-div">
+                        <img class="image" src="' . $all[$i]['Fotografia'] . '" >
                     </div>
-                    <p class="emri-h1">Laptop</p>
-                    <p class="cmimi-h1">$499.00</p>
-                    <button class="buy-button">Buy</button>
-                    <button class="cart-button">Add to Cart</button>
+                    <div class="product-name-div">
+                        <div class="rating-css">
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                        </div>
+                        <p class="emri-h2">' . $all[$i]['Emri'] . '</p>
+                        <div class="l-requirements hidden-content">
+                            <p class="emri-h1">Laptop</p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. In, vel neque voluptatibus possimus nostrum unde totam dolor quisquam voluptate tempore suscipit? Rerum vel neque ipsa facilis. Id consequuntur quisquam sapiente?
+                        </div>
+
+                        <p class="cmimi-h1">$' . $all[$i]['Cmimi'] . '</p>
+                        <button class="buy-button">Buy</button>
+                        <button class="cart-button">Add to Cart</button>
+
+                    </div>
+
 
                 </div>
-
-
+        ';
+            }
+            ?>
+            <div class="shop-redirect">
+                <button onclick="shopRedirect()" class="button-shop-redirect">CLICK FOR MORE...</button>
             </div>
-
-            <div onclick="shopRedirect()" class="item-div" id="item-div">
-                <div class="img-div">
-                    <img class="image" src="../img/PC-FSP-Gaming-ku0107i0161te-CMT-510-PLUS-62 (1).webp" alt="">
-                </div>
-                <div class="product-name-div">
-                    <div class="rating-css">
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star"></span>
-                    </div>
-                    <p class="emri-h1" id="gamingpcdiv">Gaming PC</p>
-                    <div class="sale-div">
-                        <p style="text-decoration: line-through;" class="cmimi-h1" id="sale">$1199.00</p>
-                        <p style="color: red;" class="cmimi-h1" id="sale">$1049.00</p>
-                    </div>
-                    <button class="buy-button">Buy</button>
-                    <button class="cart-button">Add to Cart</button>
-                </div>
-            </div>
-
-            <div onclick="shopRedirect()" class="item-div">
-                <div class="img-div">
-                    <div class="best-seller">
-                        <p>Best Seller</p>
-                    </div>
-                    <img class="image" src="../img/monitor-image5f7f02905006e.webp" alt="">
-                </div>
-                <div class="product-name-div">
-                    <div class="rating-css">
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                    </div>
-                    <p class="emri-h1">Gaming Monitor</p>
-                    <p class="cmimi-h1">$129.00</p>
-                    <button class="buy-button">Buy</button>
-                    <button class="cart-button">Add to Cart</button>
-                </div>
-            </div>
-            <div onclick="shopRedirect()" class="item-div">
-                <div class="img-div">
-                    <img class="image" src="../img/mouse-image5d303c5487d84.webp" alt="">
-                </div>
-                <div class="product-name-div">
-                    <div class="rating-css">
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star"></span>
-                        <span class="fa fa-star"></span>
-                        <span class="fa fa-star"></span>
-                    </div>
-                    <p class="emri-h1">Gaming Mouse</p>
-                    <p class="cmimi-h1">$79.00</p>
-                    <button class="buy-button">Buy</button>
-                    <button class="cart-button">Add to Cart</button>
-                </div>
-            </div>
-        </div>
-        <div class="shop-redirect">
-            <button onclick="shopRedirect()" class="button-shop-redirect">Click for more...</button>
         </div>
         <hr>
 

@@ -1,6 +1,11 @@
 <?php
 session_start();
+if ($_SESSION['email'] == '' && $_SESSION['password'] == '') {
+    header("Location: login.php");
+    die();
+}
 require_once '../controllers/ControllerMenu.php'
+
 
 
 ?>
@@ -11,7 +16,7 @@ require_once '../controllers/ControllerMenu.php'
 <head>
 
     <title>Shop</title>
-    <link rel="stylesheet" href="../css/shop.css">
+    <link rel="stylesheet" href="../css/shop.css?v=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="icon" href="../img/buytime-icon.png" type="image/icon type">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -26,20 +31,21 @@ require_once '../controllers/ControllerMenu.php'
             </div>
             <div class="menu">
                 <ul>
-                    <?php
-                    if (isset($_SESSION['Roli']) && $_SESSION['Roli'] == 1) {
-                    ?>
+                    <li><?php
+                        if (isset($_SESSION['Roli']) && $_SESSION['Roli'] == 1) {
+                        ?>
 
-                        <a target="_blank" class="login-a" href="../pages/dashboard.php">Dashboard</a>
-                    <?php
+                            <a style="color: red;" target="_blank" class="login-a" href="../pages/dashboard.php">Dashboard</a>
+                        <?php
 
-                    }
-                    ?>
-                    <a class="login-a" href="../pages/index.php">Home</a>
-                    <a class="login-a" href="../pages/contact.php">Contact</a>
-                    <a class="login-a" href="../pages/shop.php">Shop</a>
-                    <a class="login-a" href="../pages/meettheteam.php">Meet the Team</a>
-                    <a class="login-a" href="../pages/login.php">Login</a>
+                        }
+                        ?>
+                    </li>
+                    <li><a class="login-a" href="../pages/index.php">Home</a></li>
+                    <li><a class="login-a" href="../pages/shop.php">Shop</a></li>
+                    <li><a class="login-a" href="../pages/meettheteam.php">Meet the Team</a></li>
+                    <li><a class="login-a" href="../pages/contact.php">Contact</a></li>
+                    <li><a class="login-a" href="logout.php">Logout</a></li>
 
                 </ul>
             </div>
@@ -77,7 +83,7 @@ require_once '../controllers/ControllerMenu.php'
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. In, vel neque voluptatibus possimus nostrum unde totam dolor quisquam voluptate tempore suscipit? Rerum vel neque ipsa facilis. Id consequuntur quisquam sapiente?
                         </div>
 
-                        <p class="cmimi-h1">' . $all[$i]['Cmimi'] . '</p>
+                        <p class="cmimi-h1">$' . $all[$i]['Cmimi'] . '</p>
                         <button class="buy-button">Buy</button>
                         <button class="cart-button">Add to Cart</button>
 
